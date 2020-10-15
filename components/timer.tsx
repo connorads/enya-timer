@@ -5,7 +5,7 @@ import YouTube from "react-youtube";
 interface TimerProps {
   timerSeconds: number;
   videoId: string;
-  videoStartSeconds: number;
+  videoStartSeconds?: number;
 }
 
 const Timer: React.FC<TimerProps> = ({

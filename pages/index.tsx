@@ -6,7 +6,7 @@ import Timer from "../components/timer";
 interface HomeProps {
   timerSeconds: number;
   videoId: string;
-  videoStartSeconds: number;
+  videoStartSeconds?: number;
 }
 
 const Home: NextPage<HomeProps> = ({
@@ -68,9 +68,13 @@ Home.getInitialProps = async ({ query }) => {
   const videoStartSeconds = typeof s === "string" ? parseInt(s) : undefined;
 
   return {
-    timerSeconds: timerSeconds ?? 120,
-    videoId: videoId ?? "LTrk4X9ACtw",
-    videoStartSeconds: videoStartSeconds ?? (timerSeconds || videoId) ? 0 : 54,
+    timerSeconds: timerSeconds || 120,
+    videoId: videoId || "LTrk4X9ACtw",
+    videoStartSeconds: videoStartSeconds
+      ? videoStartSeconds
+      : timerSeconds || videoId
+      ? undefined
+      : 54,
   };
 };
 
