@@ -72,7 +72,7 @@ Home.getInitialProps = async ({ query }) => {
     videoId: videoId || "LTrk4X9ACtw",
     videoStartSeconds: videoStartSeconds
       ? videoStartSeconds
-      : timerSeconds || videoId
+      : videoId
       ? undefined
       : 54,
   };
