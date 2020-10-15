@@ -2,8 +2,18 @@ import { gtagEvent } from "../lib/gtag";
 import { useEffect, useState } from "react";
 import YouTube from "react-youtube";
 
-const Timer: React.FC = () => {
-  const [timeLeft, setTimeLeft] = useState(120);
+interface TimerProps {
+  timerSeconds: number;
+  videoId: string;
+  videoStartSeconds: number;
+}
+
+const Timer: React.FC<TimerProps> = ({
+  timerSeconds,
+  videoId,
+  videoStartSeconds,
+}) => {
+  const [timeLeft, setTimeLeft] = useState(timerSeconds);
 
   useEffect(() => {
     if (!timeLeft) {
@@ -22,8 +32,8 @@ const Timer: React.FC = () => {
     <>
       {!timeLeft ? (
         <YouTube
-          videoId="LTrk4X9ACtw"
-          opts={{ playerVars: { autoplay: 1, start: 54 } }}
+          videoId={videoId}
+          opts={{ playerVars: { autoplay: 1, start: videoStartSeconds } }}
         />
       ) : (
         <p>{timeLeft}</p>
