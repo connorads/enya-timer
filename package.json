@@ -12,7 +12,7 @@
     "@types/gtag.js": "^0.0.3",
     "@types/react-youtube": "^7.6.2",
     "@types/youtube": "^0.0.39",
-    "next": "9.4.4",
+    "next": "^10.0.4",
     "next-seo": "^4.6.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
