@@ -2,4 +2,4 @@
 
 ![MIT License](https://img.shields.io/github/license/connorads/enya-timer)
 
-[enyatimer.app](https://enyatimer.app) ⏱
+[enya-timer.vercel.app](https://enya-timer.vercel.app) ⏱
